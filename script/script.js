@@ -2,15 +2,15 @@ $(function(){
     $('#hide-wrapper').hide();
     setTimeout(function(){
         $('#hide-wrapper').fadeIn();
-    },2350);
+    },2050);
 
     setTimeout(function(){
         $('#home-name').css('transform','translateY(0)');
-    },2500);
+    },2200);
 
     setTimeout(function(){
         $('#about-title').removeClass('endAnime');
-    },2351);
+    },2051);
 
     function headerClose(){
         if($('#mobile-header').hasClass('hide')){
@@ -43,7 +43,7 @@ $(function(){
 //テキストのカウントアップ+バーの設定
 var bar = new ProgressBar.Line(splash_text, {//id名を指定
 	easing: 'easeInOut',//アニメーション効果linear、easeIn、easeOut、easeInOutが指定可能
-	duration: 1000,//時間指定(1000＝1秒)
+	duration: 700,//時間指定(1000＝1秒)
 	strokeWidth: 0.2,//進捗ゲージの太さ
 	color: '#2a9d8f',//進捗ゲージのカラー
 	trailWidth: 0.2,//ゲージベースの線の太さ
