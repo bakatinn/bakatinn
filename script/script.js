@@ -2,15 +2,15 @@ $(function(){
     $('#hide-wrapper').hide();
     setTimeout(function(){
         $('#hide-wrapper').fadeIn();
-    },2050);
+    },2350);
 
     setTimeout(function(){
         $('#home-name').css('transform','translateY(0)');
-    },2200);
+    },2500);
 
     setTimeout(function(){
         $('#about-title').removeClass('endAnime');
-    },2051);
+    },2351);
 
     function headerClose(){
         if($('#mobile-header').hasClass('hide')){
@@ -43,7 +43,7 @@ $(function(){
 //テキストのカウントアップ+バーの設定
 var bar = new ProgressBar.Line(splash_text, {//id名を指定
 	easing: 'easeInOut',//アニメーション効果linear、easeIn、easeOut、easeInOutが指定可能
-	duration: 700,//時間指定(1000＝1秒)
+	duration: 750,//時間指定(1000＝1秒)
 	strokeWidth: 0.2,//進捗ゲージの太さ
 	color: '#2a9d8f',//進捗ゲージのカラー
 	trailWidth: 0.2,//ゲージベースの線の太さ
@@ -68,7 +68,7 @@ var bar = new ProgressBar.Line(splash_text, {//id名を指定
 
 //アニメーションスタート
 bar.animate(1.0, function () {//バーを描画する割合を指定します 1.0 なら100%まで描画します
-	$("#splash").delay(200).fadeOut(500);//アニメーションが終わったら#splashエリアをフェードアウト
+	$("#splash").delay(500).fadeOut(800);//アニメーションが終わったら#splashエリアをフェードアウト
 });  
 
 
@@ -76,7 +76,7 @@ bar.animate(1.0, function () {//バーを描画する割合を指定します 1.
 $(window).on('load',function(){
     
     //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
-    $("#splash").delay(1000).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
+    $("#splash").delay(700).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
     
     $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
     
