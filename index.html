@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バカチン帝国</title>
+    <link rel="stylesheet" href="script/script.js">
+    <link rel="stylesheet" href="style/desktop.css">
+    <link rel="stylesheet" href="style/mobile.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/pad.css">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Praise&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Praise&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="hide-div"></div>
+
+    <div id="splash">
+    <div id="splash_text" class="dancing"></div>
+    </div>
+    <div class="splashbg"></div>
+    <div id="container"></div>
+
+    <!-- hide-wrapper -->
+    <div id="hide-wrapper">
+
+        <!-- header -->
+
+        <!-- desktop-header -->
+        <div id="desktop-header">
+            <ul class="gnavi">
+                <li id="desktop-header-logo">
+                    <span id="desktop-logo">バカチン</span>
+                </li>
+                <li><a href="#home" class="desktop-header-link">ホーム</a></li>
+                <li><a href="#overview" class="desktop-header-link">概要</a></li>
+                <li><a href="#news" class="desktop-header-link">ニュース</a></li>
+                <li><a href="#contact" class="desktop-header-link">コンタクト</a></li>
+            </ul>
+        </div>
+
+        <!-- mobile-header -->
+        <div id="mobile-header-wrapper">
+            <span id="mobile-logo">バカチン</span>
+            <div class="openbtn"><div class="openbtn-area"><span></span><span></span><span></span></div></div>
+            <div id="mobile-header" class="hide">
+                <ul class="gnavi">
+                    <li><a href="#home" class="mobile-header-link">ホーム</a></li>
+                    <li><a href="#overview" class="mobile-header-link">概要</a></li>
+                    <li><a href="#news" class="mobile-header-link">ニュース</a></li>
+                    <li><a href="#contact" class="mobile-header-link">コンタクト</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- main -->
+
+        <main>
+            <!-- home -->
+            <div id="home" class="border-wrapper">
+                <h1 id="home-title" class="animate__fadeInUp animate__animated">バカチン</h1>
+            </div>
+
+            <!-- overview -->
+            <div id="overview" class="wrapper border-wrapper">
+                <h1 id="overview-title" class="title">概要</h1>
+                <p id="overview-text">
+                    帝王          ジョン・ペルーニ<br>
+                    副帝王　　　　ラファエル・サンディエゴ<br>
+                    国民          ゴンザレス　マイケル<br>
+                    人口          13人<br>
+                    主要産業　　　輸送業<br>
+                    面積          2㎡<br>
+                    言語          バカチン語<br>
+                    建国記念日　　2020年11月16日<br>
+                    政党          与党・バカチン共産党<br>
+                    通貨          ジョン(1ジョン 1000円)<br>
+                    首都          汁バニラシティ<br>
+                    首都直属集団　bs バカチンていこくしょうねんだん<br>
+                    輪中          waziu
+                </p>
+            </div>
+            <!--
+                    帝王　ジョン・ペルーニ
+                    副帝王　ラファエル・サンディエゴ
+                    国民　ゴンザレス　マイケル
+                    人口 13人
+                    主要産業　輸送業
+                    面積2㎡
+                    言語　バカチン語
+                    建国記念日　2020年11月16日
+                    与党、バカチン共産党
+                    通貨　ジョン 1ジョン 1000円
+                    首都　汁バニラシティ
+                    首都直属集団
+                    bts バカチンていこくしょうねんだん
+                    輪中 waziu
+                    ファビコン
+                -->
+            <!-- news -->
+            <div id="news" class="wrapper border-wrapper">
+                <h1 id="news-title" class="title">ニュース</h1>
+                <div id="news-div">
+                    <div class="news-item">
+                        <p class="news-item-text news-item-text-time">2020年11月16日</p>
+                        <p class="news-item-text">　　　バカチン帝国が建国されました。</p>
+                    </div>
+                    <div class="news-item">
+                        <p class="news-item-text news-item-text-time">2021年11月16日</p>
+                        <p class="news-item-text">　　　バカチン帝国が建国一周年を迎えました。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- contact -->
+            <div id="contact" class="border-wrapper wrapper">
+                <h1 id="contact-title" class="title">コンタクト</h1>
+                <p id="contact-text">
+                    お問い合わせはメールなら
+                    <br>
+                    <span id="contact-text-mail">
+                        shunkeikobayashi<br>@gmail.com
+                    </span>
+                    <br>
+                    まで、フォームは下のボタンからお願いします。
+                    <br>
+                    <a id="contact-form-btn" href="https://forms.gle/GufkyFW5qHZF4rXn7" target="_blank" rel="noopener noreferrer">Contact Form</a>
+                </p>
+            </div>
+
+            <!-- footer -->
+            <footer>
+                <ul class="gnavi">
+                    <li><a href="#home" class="footer-link">ホーム</a></li>
+                    <li><a href="#overview" class="footer-link">概要</a></li>
+                    <li><a href="#news" class="footer-link">ニュース</a></li>
+                    <li><a href="#contact" class="footer-link">コンタクト</a></li>
+                </ul>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>
