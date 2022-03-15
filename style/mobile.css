@@ -1,0 +1,90 @@
+@charset 'utf-8';
+@media (max-width:420px) {
+    /* loading */
+    #splash__text{
+        font-size: 3.5rem;
+    }
+
+    /* wrapper */
+    .wrapper{
+        height: calc(100vh - 60px);
+    }
+
+    /* title */
+    .title{
+        font-size: 3rem;
+    }
+
+    /* header */
+    #desktop-header{
+        display: none;
+    }
+
+    #mobile-header-wrapper{
+        height: 60px;
+        width: 100%;
+        background: var(--base-color);
+    }
+
+    #mobile-logo{
+        font-size: 2.5rem;
+        color: var(--second-main-color);
+        font-family: 'Dancing Script' , cursive;
+        margin: 0 20vw 0 5vh;
+    }
+
+    body.appear .splashbg{
+        animation-duration: 1s;
+    }
+
+    #mobile-header{
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        background: var(--base-color);
+    }
+
+    #mobile-header ul{
+        padding-top: 25vh;
+    }
+
+    .mobile-header-link{
+        text-decoration: none;
+        color: var(--main-color);
+        font-family: 'Dancing Script' , cursive;
+        font-size: 1.75rem;
+    }
+
+    /* home */
+    #home-title{
+        width: 170px;
+        font-size: 2.6rem;
+        padding-top: 49vh;
+        margin: 0 auto;
+    }
+
+    /* overview */
+    #overview-text{
+        font-size: .9rem;
+    }
+
+    /* contact */
+    #contact-text-mail{
+        font-size: 2rem;
+    }
+
+    #contact-form-btn{
+        font-size: 1.45rem;
+    }
+
+    /* footer */
+    footer li{
+        padding: 0 5px;
+    }
+
+
+    #desktop-header{
+        display: none;
+    }
+
+}

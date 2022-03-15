@@ -1,0 +1,461 @@
+@charset 'utf-8';
+
+/* 共通 */
+
+#hide-div{
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: none;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+html::webkit-scrollbar{
+    display: none!important;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+:root{
+    --base-color:#264653;
+    --main-color:#2a9d8f;
+    --second-main-color:#e9c46a;
+    --acsent-color:#f4a261;
+}
+
+.title{
+    color: var(--main-color);
+    text-align: center;
+}
+
+.border-wrapper{
+    border-bottom:2px solid var(--acsent-color);
+}
+
+li{
+    list-style: none;
+}
+
+/* header */
+
+#mobile-header-wrapper,#desktop-header{
+    z-index: 1500;
+    position: fixed;
+    background: var(--acsent-color);
+    animation:fadeDownAnime .5s forwards;
+    opacity: .75;
+}
+
+#mobile-logo,#desktop-logo{
+    color: var(--main-color);
+}
+
+#mobile-header{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--second-main-color);
+    font-size: 1rem;
+}
+
+.openbtn{
+    position: absolute;
+    top: 1vh;
+    right: 4vw;
+    z-index: 999999;
+}
+
+#mobile-header .gnavi{
+    padding-top: 32.5vh;
+}
+
+#desktop-header li a{
+    color: var(--main-color);
+}
+
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+
+#splash {
+    /*fixedで全面に固定*/
+	position: fixed;
+	z-index: 9999999;
+	width: 100%;
+	height: 100%;
+	background:var(--base-color);
+	text-align:center;
+	color:#fff;
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    z-index: 999;
+	width: 100%;
+	transform: translate(-50%, -50%);
+    font-family: 'Dancing Script' , cursive;
+	color: var(--second-main-color)!important;
+}
+
+.progressbar-text{
+    color: var(--second-main-color);
+}
+
+/*IE11対策用バーの線の高さ※対応しなければ削除してください*/
+#splash_text svg{
+    height: 2px;
+}
+
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+	display:block;
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: translateX(-300%) skewX(-45deg);
+    background-color: var(--second-main-color);/*伸びる背景色の設定*/
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:translateX(-300%) skewX(-45deg);
+	}
+	100% {
+		transform-origin:left;
+		transform:translateX(500%) skewX(-45deg);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.6s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+
+/* hide-wrapper */
+
+#hide-wrapper{
+    width: 100%;
+    height: 100vh;
+}
+
+main::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes fadeDownAnime {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+.gnavi li a{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover{
+	color:var(--main-color);
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 1px;
+    background:var(--main-color);
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+/* main */
+
+main{
+    overflow: hidden;
+}
+
+/* home */
+#home{
+    width: 100%;
+    height: 100vh;
+    animation: home-gradation 10s infinite;
+}
+
+@keyframes home-gradation {
+    0%{
+        background: var(--base-color);
+    }
+    50%{
+        background: var(--second-main-color);
+    }
+    100%{
+        background: var(--acsent-color);
+    }
+}
+
+#home-title{
+    height: 135px;
+    display: block;
+    animation: home-title-animation 10s infinite;
+}
+
+@keyframes home-title-animation {
+    0%{
+        color: var(--second-main-color);
+    }
+    50%{
+        color: var(--acsent-color);
+    }
+    100%{
+        color: var(--main-color);
+    }
+}
+
+/* overview */
+#overview{
+    width: 100%;
+    background: var(--base-color);
+}
+
+#overview-title{
+    padding: 7.5vh 0 10vh;
+}
+
+#overview-text{
+    width: 75vw;
+    margin: 0 auto;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: var(--main-color);
+}
+
+/* news */
+#news{
+    width: 100%;
+    background: var(--base-color);
+}
+
+#news-title{
+    padding-top: 7vh;
+    padding-bottom: 10vh;
+}
+
+#news-div{
+    width: 75vw;
+    height: 55vh;
+    margin: 0 auto;
+}
+
+.news-item{
+    height: 50%;
+    width: 100%;
+}
+
+.news-item-text{
+    color: var(--main-color);
+}
+
+.news-item-text-time{
+    color: white;
+}
+
+/* contact */
+#contact{
+    width: 100wv;
+    background: var(--base-color);
+}
+
+#contact-title{
+    padding-top: 5vh;
+}
+
+#contact-text{
+    padding-top: 7.5vh;
+    text-align: center;
+    color: var(--main-color);
+}
+
+#contact-text-mail{
+    color: var(--second-main-color);
+    padding: 30px 0;
+}
+
+#contact-form-btn{
+    padding: 4px 15px;
+    text-decoration: none;
+    color: var(--second-main-color);
+    border: 1px solid var(--acsent-color);
+    border-radius: 100vh;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+/* footer */
+footer{
+    height: 70px;
+    width: 100vw;
+    background: var(--base-color);
+}
+
+footer ul{
+    display: flex;
+    width: 350px;
+    margin: 0 auto;
+}
+
+footer li{
+    padding-top: 25px;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+/* mobile,pad */
+
+/*==================================================
+　5-2-7 3本線が奥行きを持って回転して×に
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+	position: absolute;
+    top: 10px;
+    right: 3vw;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+	border-radius: 5px;
+}
+
+/*ボタン内側*/
+
+.openbtn .openbtn-area{
+    transition: all .4s;
+}
+
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background: #fff;
+  	width: 50%;
+  }
+
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+/*activeクラスが付与されると
+線と周りのエリアが回転して×になる*/
+
+.openbtn.active .openbtn-area{
+	transform: rotateY(-360deg);
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-135deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(135deg);
+    width: 30%;
+}
