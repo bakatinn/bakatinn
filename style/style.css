@@ -333,6 +333,9 @@ main{
     color: white;
 }
 
+.font-red{
+    font-color:red;
+}
 /* contact */
 #contact{
     width: 100wv;
