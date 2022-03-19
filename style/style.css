@@ -333,8 +333,8 @@ main{
     color: white;
 }
 
-.font-red p{
-    font-color:red;
+.font-red{
+    color: red;
 }
 /* contact */
 #contact{
