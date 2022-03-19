@@ -36,11 +36,6 @@ $(function(){
 
     $('html,body').animate({ scrollTop: 0 }, '1');
 
-     $("#particle").particleText({
-	text: "バカチン",
-	colors:["#49beaa","#456990","#ef767a"],
-        speed: "high",
-    });
 });
 
 //JS
